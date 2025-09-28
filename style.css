@@ -1,0 +1,289 @@
+/* ---------------- Global ---------------- */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(-45deg, #2196F3, #21CBF3, #FF4081, #FFB74D);
+  color: #333;
+  overflow-x: hidden;
+}
+
+.hidden { display: none !important; }
+
+button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+/* ---------------- Container ---------------- */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* ---------------- Welcome Page ---------------- */
+#welcomePage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background: linear-gradient(-45deg, #2196F3, #21CBF3, #FF4081, #FFB74D);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: #fff;
+  text-align: center;
+  z-index: 10;
+  position: relative;
+}
+
+#welcomePage h1.logo {
+  font-size: 52px;
+  margin-bottom: 20px;
+  animation: fadeIn 1.5s ease-in-out;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+}
+
+#welcomePage p.tagline {
+  font-size: 22px;
+  margin-bottom: 30px;
+  animation: fadeIn 2s ease-in-out;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+}
+
+#welcomePage button {
+  padding: 14px 40px;
+  font-size: 20px;
+  font-weight: bold;
+  background: #fff;
+  color: #2196F3;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+#welcomePage button:hover {
+  background: #f0f0f0;
+  color: #1976D2;
+}
+#streamPage, #subjectPage, #difficultyPage, #quizPage, #resultPage, #profilePage, #historyPage {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px 25px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  animation: fadeInUp 0.8s ease;
+  transition: all 0.5s ease-in-out;
+}
+
+/* ---------------- Register & Login Pages ---------------- */
+#registerPage, #loginPage {
+  background:#ccc;
+
+  max-width: 450px;
+  margin: 50px auto;
+  padding: 35px;
+  border-radius: 16px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+  text-align: center;
+  animation: fadeIn 1s ease;
+}
+
+#registerPage input, #loginPage input {
+  width: 90%;
+  padding: 12px;
+  margin: 12px 0;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+#registerPage input:focus, #loginPage input:focus {
+  border-color: #2196F3;
+  box-shadow: 0 0 8px rgba(33, 150, 243, 0.4);
+}
+
+/* ---------------- Streams, Subjects, Difficulty Cards ---------------- */
+/* ---------------- General Page Styling ---------------- */
+#streamPage, #subjectPage, #difficultyPage, #quizPage, #resultPage, #profilePage, #historyPage {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px 25px;
+  border-radius: 20px;
+  background:whitesmoke;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  animation: fadeInUp 0.8s ease;
+  transition: all 0.5s ease-in-out;
+}
+
+/* ---------------- Animations ---------------- */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------------- Header Styling ---------------- */
+#streamPage .header, #subjectPage h2, #difficultyPage h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 28px;
+  color: #1E88E5;
+  font-weight: bold;
+}
+
+/* ---------------- Cards for Streams / Subjects / Difficulty ---------------- */
+#streamList button,
+#subjectList button,
+#difficultyList button {
+  display: inline-block;
+  margin: 15px;
+  padding: 20px 35px;
+  font-size: 18px;
+  border-radius: 16px;
+  background: linear-gradient(135deg,#42A5F5,#1E88E5);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  font-weight: 600;
+  background-size: 200% 200%;
+  animation: cardGradient 6s ease infinite;
+}
+
+#streamList button:hover,
+#subjectList button:hover,
+#difficultyList button:hover {
+  transform: translateY(-6px) scale(1.08);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+}
+
+@keyframes cardGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ---------------- Quiz Page ---------------- */
+#quizPage h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1E88E5;
+}
+
+#quizBox div {
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 12px;
+  background: #f5f5f5;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+#quizBox div:hover {
+  transform: scale(1.02);
+}
+
+#timer {
+  font-weight: bold;
+  font-size: 20px;
+  color: #f44336;
+  text-align: right;
+  margin-bottom: 15px;
+}
+
+/* ---------------- Result Page ---------------- */
+#progressBar {
+  width: 0%;
+  height: 40px;
+  background: linear-gradient(90deg,#4CAF50,#81C784);
+  text-align: center;
+  line-height: 40px;
+  color: #fff;
+  border-radius: 16px;
+  transition: width 1s ease-in-out;
+  font-weight: bold;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+#feedback {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------------- Profile Page ---------------- */
+.profile-container {
+  text-align: center;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  background:whitesmoke
+}
+
+.profile-card {
+  margin-top: 20px;
+}
+
+.avatar-container img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #42A5F5;
+  margin-bottom: 15px;
+}
+/* ---------------- Action Buttons (Register, Login, Submit, Back) ---------------- */
+button.back-btn,
+button#profileBtn,
+button#historyBtn,
+#registerPage button,
+#loginPage button,
+#quizPage button,
+#resultPage button,
+#historyPage button
+{
+  background: linear-gradient(135deg, #1E88E5, #42A5F5);
+  color: #fff;
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 12px;
+  margin: 10px 5px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+  transition: all 0.3s ease-in-out;
+}
+
+button.back-btn:hover,
+button#profileBtn:hover,
+button#historyBtn:hover,
+#registerPage button:hover,
+#loginPage button:hover,
+#quizPage button:hover,
+#resultPage button:hover,
+#historyPage button:hover
+ {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  background: linear-gradient(135deg, #42A5F5, #1E88E5);
+}
+
+/* Optional: make all buttons have uppercase text for consistency */
+button {
+  text-transform: uppercase;
+  cursor: pointer;
+}

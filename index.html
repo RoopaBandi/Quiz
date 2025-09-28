@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Online Quiz Application</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Welcome Page -->
+  <div id="welcomePage">
+    <div class="welcome-container">
+      <h1 class="logo">QuizMaster 🎓</h1>
+      <p class="tagline">Test your knowledge, sharpen your skills, and challenge yourself!</p>
+      <button onclick="goToRegister()">Get Started</button>
+    </div>
+  </div>
+
+  <!-- All other pages inside container -->
+  <div class="container">
+
+    <!-- Registration Page -->
+    <div id="registerPage" class="hidden">
+      <h2>Student Registration</h2>
+      <input type="text" id="regName" placeholder="Full Name"><br><br>
+      <input type="text" id="regID" placeholder="Student ID"><br><br>
+      <input type="text" id="regBranch" placeholder="Branch"><br><br>
+      <input type="date" id="regDOB"><br><br>
+      <input type="text" id="regGrade" placeholder="Grade"><br><br>
+      <input type="text" id="regUsername" placeholder="Username"><br><br>
+      <input type="password" id="regPassword" placeholder="Password"><br><br>
+      <button onclick="register()">Register</button>
+      <p>Already registered? <a href="#" onclick="showLogin()">Login here</a></p>
+    </div>
+
+    <!-- Login Page -->
+    <div id="loginPage" class="hidden">
+      <h2>Student Login</h2>
+      <input type="text" id="username" placeholder="Enter Username"><br><br>
+      <input type="password" id="password" placeholder="Enter Password"><br><br>
+      <button onclick="login()">Login</button>
+      <p>New student? <a href="#" onclick="showRegister()">Register here</a></p>
+    </div>
+
+    <!-- Streams Page -->
+    <div id="streamPage" class="hidden">
+      <div class="header">
+         <button id="profileBtn" class="profile-btn" onclick="showProfile()">👤 Profile</button>
+        <button id="historyBtn" class="history-btn" onclick="showHistory()">📊 History</button>
+        <h2>Select Your Stream</h2>
+       
+
+      </div>
+      <div id="streamList" class="list"></div>
+    </div>
+
+    <!-- Profile Page -->
+    <div id="profilePage" class="hidden">
+      <div class="profile-container">
+        <h2>Student Profile</h2>
+        <div class="profile-card">
+          <div class="avatar-container">
+            <img id="profileAvatar" src="avatar.png" alt="Profile Avatar">
+          </div>
+          <p><strong>Name:</strong> <span id="profileName"></span></p>
+          <p><strong>Student ID:</strong> <span id="profileID"></span></p>
+          <p><strong>Branch:</strong> <span id="profileBranch"></span></p>
+          <p><strong>Date of Birth:</strong> <span id="profileDOB"></span></p>
+          <p><strong>Grade:</strong> <span id="profileGrade"></span></p>
+        </div>
+        <button class="back-btn" onclick="backToStreams()">⬅ Back to Streams</button>
+      </div>
+    </div>
+
+    <!-- Subject Selection -->
+    <div id="subjectPage" class="hidden">
+      <h2>Select Subject</h2>
+      <div id="subjectList"></div>
+      <button class="back-btn" onclick="backToStreams()">⬅ Back to Streams</button>
+    </div>
+
+    <!-- Difficulty Selection -->
+    <div id="difficultyPage" class="hidden">
+      <h2>Select Difficulty</h2>
+      <div id="difficultyList" class="list">
+        <button onclick="selectDifficulty('Easy')">Easy</button>
+        <button onclick="selectDifficulty('Intermediate')">Intermediate</button>
+        <button onclick="selectDifficulty('Difficult')">Difficult</button>
+        
+      </div>
+      <button class="back-btn" onclick="backToSubjects()">⬅ Back to Subjects</button>
+    </div>
+
+    <!-- Quiz Page -->
+    <div id="quizPage" class="hidden">
+      <h2 id="subjectTitle"></h2>
+      <div id="timer">Time Left: <span id="time">60</span>s</div>
+      <div id="quizBox"></div>
+      <button onclick="submitQuiz()">Submit Quiz</button>
+      <div id="result"></div>
+    </div>
+
+    <!-- Result Page -->
+    <div id="resultPage" class="hidden">
+      <h2>Quiz Result</h2>
+      <div class="progress-container">
+        <div id="progressBar"></div>
+      </div>
+      <p id="feedback"></p>
+      <br>
+      <button onclick="goHome()">Go to Home</button>
+    </div>
+    <!-- History Page -->
+<div id="historyPage" class="hidden">
+  <h2>Quiz History</h2>
+  <canvas id="progressChart" width="400" height="200"></canvas>
+  <table id="historyTable">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Stream</th>
+        <th>Subject</th>
+        <th>Difficulty</th>
+        <th>Score (%)</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <button onclick="backToStreams()">⬅ Back to Streams</button>
+</div>
+
+<!-- Include Chart.js library -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+  </div>
+
+  <script src="questions.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
