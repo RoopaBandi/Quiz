@@ -23,12 +23,60 @@ button:hover {
 }
 
 /* ---------------- Container ---------------- */
+/* General container styling */
 .container {
-  width: 90%;
-  max-width: 1200px;
+  max-width: 900px;
   margin: auto;
   padding: 20px;
 }
+
+/* For small screens */
+@media (max-width: 768px) {
+  h1, h2 {
+    font-size: 1.5rem;
+  }
+
+  .list button, 
+  .back-btn, 
+  .profile-btn {
+    width: 100%;
+    margin: 8px 0;
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  .profile-card {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .progress-container {
+    width: 100%;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  h1, h2 {
+    font-size: 1.2rem;
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .list button {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
+
 
 /* ---------------- Welcome Page ---------------- */
 #welcomePage {
@@ -286,4 +334,6 @@ button#historyBtn:hover,
 button {
   text-transform: uppercase;
   cursor: pointer;
+  min-height: 44px; /* recommended for touch */
+  border-radius: 10px;
 }
